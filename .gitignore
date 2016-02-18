@@ -1,6 +1,3 @@
 target
 *.iml
 .idea/*
-vcs.xml
-workspace.xml
-
