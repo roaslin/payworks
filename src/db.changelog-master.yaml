@@ -1,0 +1,95 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: raul
+    changes:
+    - createTable:
+#            schemaName: test
+        tableName: super_hero
+        columns:
+          - column:
+              name: id
+              type: int
+              constraints:
+                primaryKey: true
+                nullable: false
+          - column:
+              name: name
+              type: CHAR(100)
+              constraints:
+                nullable: false
+          - column:
+              name: pseudonym
+              type: CHAR(100)
+              constraints:
+                nullable: false
+          - column:
+              name: publisher
+              type: CHAR(100)
+              constraints:
+                nullable: false
+#          - column:
+#              name: allyOf_id
+#              type: int
+#          - column:
+#              name: ally_id
+#              type: int
+#          - column:
+#              name: super_hero_id
+#              type: int
+#              constraints:
+#                nullable: true
+#                references: super_hero(id)
+#                foreignKeyName: fk_ally__super_hero
+          - column:
+              name: first_appearance
+              type: TIMESTAMP
+
+    - addAutoIncrement:
+          columnDataType: int
+          columnName: id
+          incrementBy: 1
+          startWith: 1
+          tableName: super_hero
+    - createTable:
+            tableName: skill
+            columns:
+            - column:
+                name: id
+                type: int
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: name
+                type: CHAR(100)
+                constraints:
+                  nullable: false
+            - column:
+                name: super_hero_id
+                type: int
+                constraints:
+                  nullable: true
+                  references: super_hero(id)
+                  foreignKeyName: fk_skill__super_hero
+    - addAutoIncrement:
+              columnDataType: int
+              columnName: id
+              incrementBy: 1
+              startWith: 1
+              tableName: skill
+
+#    - changeSet:
+#        id: 1-1
+#        author: raul
+#        changes:
+#    - sqlFile:
+#            path: providers-data.sql
+#            relativeToChangelogFile: true
+#    - sql:
+#          comment: first prvider data
+#          dbms: h2
+#          splitStatements: true
+#          sql: INSERT INTO public.FIRST_PROVIDER_SURVEY (id,provider_name, name, question, keywords, rating, size, number_of_yes, number_of_no, number_of_dunno)
+#               VALUES (1,'FIRST_MARKET_SURVEY_PROVIDER', 'Tesla Survey','¿do you like tesla motors?', 'electric, cars, tesla, usa', 5, 100, 90, 5, 5);
+#          stripComments: true
