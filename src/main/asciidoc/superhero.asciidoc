@@ -1,0 +1,61 @@
+[[resources-superheroes]]
+== Test - Super heroes
+
+Superheroes resource is used to create and fetch super heroes.
+
+[[resources-superheroes-post]]
+=== Post superheroes
+
+`POST /superheroes`
+
+Creates new resource into the database.
+
+===== Request structure
+
+include::{snippets}/superheroes/post/request-fields.adoc[]
+
+===== Response structure
+
+include::{snippets}/superheroes/post/response-fields.adoc[]
+
+===== Response headers
+include::{snippets}/superheroes/post/response-headers.adoc[]
+
+===== Example request/response
+
+include::{snippets}/superheroes/post/curl-request.adoc[]
+include::{snippets}/superheroes/post/http-response.adoc[]
+
+[[resources-superheroes-get]]
+=== Get Super hero by pseudonym
+
+`GET /superheroes/{pseudonym}`
+
+Get an existing super hero that match a particular pseudonym.
+
+include::{snippets}/superheroes/get/path-parameters.adoc[]
+
+===== Response structure
+
+include::{snippets}/superheroes/get/response-fields.adoc[]
+
+===== Example request/response
+
+include::{snippets}/superheroes/get/curl-request.adoc[]
+include::{snippets}/superheroes/get/http-response.adoc[]
+
+[[resources-superheroes-get]]
+=== Get all super heroes
+
+`GET /superheroes`
+
+Get all existing super heroes.
+
+===== Response structure
+
+include::{snippets}/superheroes/get/getAll/response-fields.adoc[]
+
+===== Example request/response
+
+include::{snippets}/superheroes/get/getAll/curl-request.adoc[]
+include::{snippets}/superheroes/get/getAll/http-response.adoc[]
