@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Object holding SuperHeroObjects to be serialized as response.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

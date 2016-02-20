@@ -1,4 +1,4 @@
-= Caravelo API Documentation
+= Payworks SuperHero API Documentation
 :doctype: book
 :compat-mode:
 :page-layout!:
@@ -96,7 +96,8 @@ A trailing slash is not necessary and should usually be omitted.
 [[overview-keywords]]
 === Super heroes
 
-In the documented API were used 2 super heroes, Deadpool and Super López. Those two are ready into the database to be fetched.
+In the documented API were used 2 super heroes, Deadpool and Super López.
+The database comes empty and ready to be populated.
 
 [[resources]]
 = Resources

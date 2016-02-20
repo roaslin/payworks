@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Service used to fetch super heroes into the database and to provide Objects to the Resource.
+ */
 @Service
 public class SuperHeroServiceImpl implements SuperHeroService {
     @Autowired

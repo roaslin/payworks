@@ -2,6 +2,9 @@ package com.payworks.api.superhero;
 
 import java.util.Optional;
 
+/**
+ * SuperHeroService interface.
+ */
 public interface SuperHeroService {
     SuperHeroObject createSuperHero(SuperHeroObject request);
 

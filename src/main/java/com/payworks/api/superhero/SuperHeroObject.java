@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+/**
+ * A singular SuperHero object to be serialized.
+ */
 @Data
 @Builder
 @AllArgsConstructor
@@ -26,8 +29,11 @@ public class SuperHeroObject {
     @NotNull
     private List<String> skills;
 
+    /**
+     * Can be null
+     */
     private List<String> allies;
 
     @NotNull
-    private String firstAppearance;// YYYY-MM-DD
+    private String firstAppearance;// format : YYYY-MM-DD
 }

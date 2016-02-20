@@ -14,6 +14,9 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Super hero entity.
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder

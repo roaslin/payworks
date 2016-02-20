@@ -9,6 +9,9 @@ import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
+/**
+ * Base entity.
+ */
 @MappedSuperclass
 @Getter
 public abstract class BaseEntity implements Serializable {

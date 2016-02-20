@@ -14,6 +14,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
+/**
+ * Resource that exposes existing super heroes into the databse.
+ */
 @RestController
 @RequestMapping("/api/superheroes")
 public class SuperHeroResource {
@@ -21,6 +24,12 @@ public class SuperHeroResource {
     @Autowired
     private SuperHeroService superHeroService;
 
+    /**
+     * Resource for creating new super hero.
+     * @param request of type SuperHeroObject.
+     * @return Serialized SuperHeroObject that is created and HttpStatus as Created.
+     * The new resource URI into the Location header is also provided.
+     */
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<SuperHeroObject> createNewSuperHeroes(@RequestBody @NotNull SuperHeroObject request) {
 
@@ -33,6 +42,12 @@ public class SuperHeroResource {
         return new ResponseEntity<>(response, httpHeaders, HttpStatus.CREATED);
     }
 
+    /**
+     * Resource for fetching a particular super hero by pseudonym.
+     *
+     * @param pseudonym String containing the super hero pseudonym to be look up into the database.
+     * @return Serialized SuperHeroObject with HttpStatus.OK status or message with HttpStatus.NOT_FOUND.
+     */
     @RequestMapping(value = "{pseudonym}", method = RequestMethod.GET)
     public ResponseEntity<?> findSuperHero(@PathVariable @NotNull String pseudonym) {
         final Optional<SuperHeroObject> response = superHeroService.findSuperHero(pseudonym);
@@ -44,6 +59,11 @@ public class SuperHeroResource {
         }
     }
 
+    /**
+     * Resource for fetching all existing super heroes into the database.
+     *
+     * @return SuperHeroesResponse containing a list of SuperHeroObjects.
+     */
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<SuperHeroesResponse> getAllSuperHeroes()
     {
